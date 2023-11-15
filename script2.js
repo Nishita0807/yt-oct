@@ -11,10 +11,11 @@ async function fetchAndRenderVideoDetails(videoId) {
         const data = await response.json();
         const videoPlayer = document.getElementById('videoPlayer');
         const videoStatistics = document.getElementById('videoStatistics');
-        const iframeWidth = window.innerWidth <= 780 ? 400 : 640;
+        const iframeWidth = window.innerWidth <= 789 ? 370 : 640;
+        const iframeHeight = window.innerHeight <= 789 ? 300 : 360;
 
         videoPlayer.innerHTML = `
-            <iframe width="${iframeWidth}" height="360" src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allowfullscreen></iframe>
+            <iframe width="${iframeWidth}" height="${iframeHeight}" src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allowfullscreen></iframe>
         `;
         videoStatistics.innerHTML = `
      
