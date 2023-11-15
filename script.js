@@ -3,7 +3,7 @@
 // const maxResults = 20;
 
 // Function to fetch videos and render them on the home page.
-const API_KEY='AIzaSyCYUi1lvYPxlYfydhsoy50meLZjMzAKKNE';
+const API_KEY='AIzaSyDBm14pdp5RU6BcqcIavxIs4gvpbZHJwxk';
 const BASE_URL='https://www.googleapis.com/youtube/v3';
 
 
@@ -147,3 +147,30 @@ searchButton.addEventListener('click', () => {
 
 // Initialize the page with empty search
 fetchAndRenderVideos('', 20);
+
+function displaying() {
+    const section1 = document.getElementById("section-1");
+    const userSection = document.getElementById("user-section");
+
+    if (window.innerWidth <= 767) {
+        // For mobile screens
+        section1.style.display="none";
+       if(userSection.style.display === "block"){
+        userSection.style.display="none";
+       }    
+       else{
+        userSection.style.display = "block";
+       }
+    } else {
+        // For laptop screens
+        // Add your laptop-specific logic here
+        if (section1.style.display === "none" || section1.style.display === "") {
+            section1.style.display = "flex";
+            userSection.style.display = "none";
+        } else {
+            section1.style.display = "none";
+            userSection.style.display = "block";
+        }
+    }
+}
+

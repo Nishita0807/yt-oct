@@ -1,4 +1,4 @@
-const API_KEY='AIzaSyCYUi1lvYPxlYfydhsoy50meLZjMzAKKNE';
+const API_KEY='AIzaSyDBm14pdp5RU6BcqcIavxIs4gvpbZHJwxk';
 const BASE_URL = 'https://www.googleapis.com/youtube/v3';
 
 // Function to fetch video details and render them on the video details page
@@ -11,8 +11,10 @@ async function fetchAndRenderVideoDetails(videoId) {
         const data = await response.json();
         const videoPlayer = document.getElementById('videoPlayer');
         const videoStatistics = document.getElementById('videoStatistics');
+        const iframeWidth = window.innerWidth <= 767 ? 400 : 640;
+
         videoPlayer.innerHTML = `
-            <iframe width="640" height="360" src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allowfullscreen></iframe>
+            <iframe width="${iframeWidth}" height="360" src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allowfullscreen></iframe>
         `;
         videoStatistics.innerHTML = `
      
@@ -287,7 +289,7 @@ function addComment(videoId, commentText) {
 // Function to fetch and render related videos
 async function fetchAndRenderRelatedVideos() {
     try {
-        const response = await fetch(`${BASE_URL}/search?key=${API_KEY}&part=snippet&type=video&maxResults=7`);
+        const response = await fetch(`${BASE_URL}/search?key=${API_KEY}&part=snippet&type=video&maxResults=20`);
         if (!response.ok) {
             throw new Error(`Error fetching related videos: ${response.status}`);
         }

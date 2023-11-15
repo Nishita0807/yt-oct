@@ -100,12 +100,25 @@ border-radius: 0px 2px 2px 0px;
     display: flex;
     justify-content: space-between;
     
+    
 }
+#user-section{
+    display: none;
+    background-color: var(--Background-Color, #212121);
+    padding:18px;
+    
 
+}
+#user-section>div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom:24px;
+}
 .section-1{
     display: flex;
     width: 240px;
-    height: 968px;
+    height: 958px;
     flex-direction: column;
 
     background-color: var(--Background-Color, #212121);
@@ -234,3 +247,37 @@ background-color: #000000;
     background-color: #000000;
 }
 
+
+
+@media only screen and (max-width: 767px) {
+ .icons{
+    display: none;
+ }
+ .part-1{
+display: none;
+ }
+
+
+
+
+.search-mike>div>input[type='text']{
+    height:40px;
+    width:100px;
+    background-color: #121212; 
+color: white;
+
+padding-left:12px;
+    border: none;
+}
+
+
+
+#videoList{
+    height:968px;
+}
+
+
+.section-1{
+    display: none;
+}
+}

@@ -123,10 +123,14 @@ background-color: #121212;
 width: 426px;
 height: 968px;
 
-
+overflow-y: scroll;
 flex-shrink: 0;
 background-color: #121212;
 
+}
+
+.part-2::-webkit-scrollbar{
+    display: none;
 }
 
 
@@ -453,3 +457,90 @@ line-height: 18px; /* 150% */
    
     overflow-y: hidden;
 }
+
+
+
+@media only screen and (max-width: 767px) {
+    .icons{
+       display: none;
+    }
+  
+   
+  
+   
+   .search-mike>div>input[type='text']{
+       height:40px;
+       width:100px;
+       background-color: #121212; 
+   color: white;
+   
+   padding-left:12px;
+       border: none;
+   }
+   
+   .main{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    padding-left:0px;
+    padding-right:0px;
+    background-color: #181818;
+    flex-direction: column;
+}
+
+.part-2{
+    width:400px;
+}
+.part-1{
+    width:400px;
+height: 968px;
+
+display: flex;
+flex-direction: column;
+
+align-items: flex-start;
+background-color: #121212;
+
+}
+
+.all-icons{
+    display: flex;
+    align-items: flex-start;
+  flex-direction: column;
+  gap:10px;
+    border-bottom: 1px solid gray;
+}
+
+.channel{
+    display: flex;
+    align-items: flex-start;
+flex-direction: column;   
+
+}
+.channel-desc>div:first-child{
+    display: none;
+}
+.profile{
+    border-bottom: 1px solid gray;
+}
+ .channel-desc>div:nth-child(2){
+      display: none;
+    }
+
+
+    #commentInput{
+        width:300px;
+        padding:3px;
+        
+    }
+
+    #addComment>:nth-child(2){
+        display: flex;
+    width: 300px;
+    padding: 7px 0px 8px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    border-bottom: 1px solid #303030;
+    }
+   }
