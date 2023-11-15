@@ -11,7 +11,7 @@ async function fetchAndRenderVideoDetails(videoId) {
         const data = await response.json();
         const videoPlayer = document.getElementById('videoPlayer');
         const videoStatistics = document.getElementById('videoStatistics');
-        const iframeWidth = window.innerWidth <= 767 ? 400 : 640;
+        const iframeWidth = window.innerWidth <= 780 ? 400 : 640;
 
         videoPlayer.innerHTML = `
             <iframe width="${iframeWidth}" height="360" src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allowfullscreen></iframe>
